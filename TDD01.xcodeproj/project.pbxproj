@@ -22,7 +22,8 @@
 		D2799A292761AA95000B0318 /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A282761AA95000B0318 /* ListingService.swift */; };
 		D2799A2B2761AAAA000B0318 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2A2761AAAA000B0318 /* Listing.swift */; };
 		D2799A2D2761AAC5000B0318 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2C2761AAC5000B0318 /* ListingViewModel.swift */; };
-		D2799A2F2761AAF6000B0318 /* ListingGroupSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2E2761AAF6000B0318 /* ListingGroupSelectionViewModel.swift */; };
+		D2799A2F2761AAF6000B0318 /* ListingGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */; };
+		D2799A312761AF91000B0318 /* ListingGroupSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A302761AF91000B0318 /* ListingGroupSelectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +62,8 @@
 		D2799A282761AA95000B0318 /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
 		D2799A2A2761AAAA000B0318 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		D2799A2C2761AAC5000B0318 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
-		D2799A2E2761AAF6000B0318 /* ListingGroupSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupSelectionViewModel.swift; sourceTree = "<group>"; };
+		D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupViewModel.swift; sourceTree = "<group>"; };
+		D2799A302761AF91000B0318 /* ListingGroupSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupSelectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +153,11 @@
 		D2799A272761AA7B000B0318 /* Listing Group */ = {
 			isa = PBXGroup;
 			children = (
-				D2799A282761AA95000B0318 /* ListingService.swift */,
-				D2799A2A2761AAAA000B0318 /* Listing.swift */,
+				D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */,
+				D2799A302761AF91000B0318 /* ListingGroupSelectionViewModel.swift */,
 				D2799A2C2761AAC5000B0318 /* ListingViewModel.swift */,
-				D2799A2E2761AAF6000B0318 /* ListingGroupSelectionViewModel.swift */,
+				D2799A2A2761AAAA000B0318 /* Listing.swift */,
+				D2799A282761AA95000B0318 /* ListingService.swift */,
 			);
 			path = "Listing Group";
 			sourceTree = "<group>";
@@ -358,12 +361,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2799A312761AF91000B0318 /* ListingGroupSelectionViewModel.swift in Sources */,
 				D27999F527604951000B0318 /* ViewController.swift in Sources */,
 				D27999F127604951000B0318 /* AppDelegate.swift in Sources */,
 				D2799A2B2761AAAA000B0318 /* Listing.swift in Sources */,
 				D2799A292761AA95000B0318 /* ListingService.swift in Sources */,
 				D27999F327604951000B0318 /* SceneDelegate.swift in Sources */,
-				D2799A2F2761AAF6000B0318 /* ListingGroupSelectionViewModel.swift in Sources */,
+				D2799A2F2761AAF6000B0318 /* ListingGroupViewModel.swift in Sources */,
 				D2799A2D2761AAC5000B0318 /* ListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
