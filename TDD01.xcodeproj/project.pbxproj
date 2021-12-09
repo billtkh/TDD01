@@ -10,20 +10,19 @@
 		37B59AB0C1FF37CEF471D96C /* Pods_TDD01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42B832C758844C3EF0DCC8A /* Pods_TDD01.framework */; };
 		6E734BC55B1304AB71B949F5 /* Pods_TDD01Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB5AFBFA300912822ED6A08 /* Pods_TDD01Tests.framework */; };
 		D27999F127604951000B0318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27999F027604951000B0318 /* AppDelegate.swift */; };
-		D27999F327604951000B0318 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27999F227604951000B0318 /* SceneDelegate.swift */; };
 		D27999F527604951000B0318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27999F427604951000B0318 /* ViewController.swift */; };
-		D27999F827604951000B0318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27999F627604951000B0318 /* Main.storyboard */; };
 		D27999FA27604953000B0318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D27999F927604953000B0318 /* Assets.xcassets */; };
 		D27999FD27604953000B0318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27999FB27604953000B0318 /* LaunchScreen.storyboard */; };
-		D2799A0827604953000B0318 /* TDD01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A0727604953000B0318 /* TDD01Tests.swift */; };
 		D2799A2127604A02000B0318 /* ListingGroupViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2027604A02000B0318 /* ListingGroupViewModelTests.swift */; };
-		D2799A2427606569000B0318 /* ListingServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2327606569000B0318 /* ListingServiceStub.swift */; };
 		D2799A2627608C83000B0318 /* ListingGroupStateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2527608C83000B0318 /* ListingGroupStateSpy.swift */; };
 		D2799A292761AA95000B0318 /* ListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A282761AA95000B0318 /* ListingService.swift */; };
 		D2799A2B2761AAAA000B0318 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2A2761AAAA000B0318 /* Listing.swift */; };
 		D2799A2D2761AAC5000B0318 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2C2761AAC5000B0318 /* ListingViewModel.swift */; };
 		D2799A2F2761AAF6000B0318 /* ListingGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */; };
 		D2799A312761AF91000B0318 /* ListingGroupSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A302761AF91000B0318 /* ListingGroupSelectionViewModel.swift */; };
+		D2799A342761B4A3000B0318 /* ListingGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A332761B4A3000B0318 /* ListingGroupViewController.swift */; };
+		D2799A372761B7DE000B0318 /* ListingGroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A362761B7DE000B0318 /* ListingGroupSelectionView.swift */; };
+		D2799A3A2761B80A000B0318 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A392761B80A000B0318 /* ListingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,22 +47,21 @@
 		D1801698F346CEB73C88D609 /* Pods-TDD01-TDD01UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01-TDD01UITests.release.xcconfig"; path = "Target Support Files/Pods-TDD01-TDD01UITests/Pods-TDD01-TDD01UITests.release.xcconfig"; sourceTree = "<group>"; };
 		D27999ED27604951000B0318 /* TDD01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDD01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27999F027604951000B0318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D27999F227604951000B0318 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D27999F427604951000B0318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D27999F727604951000B0318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D27999F927604953000B0318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D27999FC27604953000B0318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D27999FE27604953000B0318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2799A0327604953000B0318 /* TDD01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDD01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2799A0727604953000B0318 /* TDD01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDD01Tests.swift; sourceTree = "<group>"; };
 		D2799A2027604A02000B0318 /* ListingGroupViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupViewModelTests.swift; sourceTree = "<group>"; };
-		D2799A2327606569000B0318 /* ListingServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingServiceStub.swift; sourceTree = "<group>"; };
 		D2799A2527608C83000B0318 /* ListingGroupStateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupStateSpy.swift; sourceTree = "<group>"; };
 		D2799A282761AA95000B0318 /* ListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingService.swift; sourceTree = "<group>"; };
 		D2799A2A2761AAAA000B0318 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		D2799A2C2761AAC5000B0318 /* ListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupViewModel.swift; sourceTree = "<group>"; };
 		D2799A302761AF91000B0318 /* ListingGroupSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupSelectionViewModel.swift; sourceTree = "<group>"; };
+		D2799A332761B4A3000B0318 /* ListingGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupViewController.swift; sourceTree = "<group>"; };
+		D2799A362761B7DE000B0318 /* ListingGroupSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupSelectionView.swift; sourceTree = "<group>"; };
+		D2799A392761B80A000B0318 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +117,10 @@
 		D27999EF27604951000B0318 /* TDD01 */ = {
 			isa = PBXGroup;
 			children = (
-				D2799A272761AA7B000B0318 /* Listing Group */,
 				D27999F027604951000B0318 /* AppDelegate.swift */,
-				D27999F227604951000B0318 /* SceneDelegate.swift */,
 				D27999F427604951000B0318 /* ViewController.swift */,
-				D27999F627604951000B0318 /* Main.storyboard */,
-				D27999F927604953000B0318 /* Assets.xcassets */,
-				D27999FB27604953000B0318 /* LaunchScreen.storyboard */,
+				D2799A272761AA7B000B0318 /* Listing Group */,
+				D2799A352761B5D7000B0318 /* Support Resources */,
 				D27999FE27604953000B0318 /* Info.plist */,
 			);
 			path = TDD01;
@@ -135,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				D2799A222760653B000B0318 /* ListingGroup */,
-				D2799A0727604953000B0318 /* TDD01Tests.swift */,
 			);
 			path = TDD01Tests;
 			sourceTree = "<group>";
@@ -144,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				D2799A2027604A02000B0318 /* ListingGroupViewModelTests.swift */,
-				D2799A2327606569000B0318 /* ListingServiceStub.swift */,
 				D2799A2527608C83000B0318 /* ListingGroupStateSpy.swift */,
 			);
 			path = ListingGroup;
@@ -153,13 +146,25 @@
 		D2799A272761AA7B000B0318 /* Listing Group */ = {
 			isa = PBXGroup;
 			children = (
+				D2799A332761B4A3000B0318 /* ListingGroupViewController.swift */,
 				D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */,
+				D2799A362761B7DE000B0318 /* ListingGroupSelectionView.swift */,
 				D2799A302761AF91000B0318 /* ListingGroupSelectionViewModel.swift */,
+				D2799A392761B80A000B0318 /* ListingCell.swift */,
 				D2799A2C2761AAC5000B0318 /* ListingViewModel.swift */,
 				D2799A2A2761AAAA000B0318 /* Listing.swift */,
 				D2799A282761AA95000B0318 /* ListingService.swift */,
 			);
 			path = "Listing Group";
+			sourceTree = "<group>";
+		};
+		D2799A352761B5D7000B0318 /* Support Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D27999F927604953000B0318 /* Assets.xcassets */,
+				D27999FB27604953000B0318 /* LaunchScreen.storyboard */,
+			);
+			path = "Support Resources";
 			sourceTree = "<group>";
 		};
 		EF7040D7F86645800BA2D1DF /* Pods */ = {
@@ -262,7 +267,6 @@
 			files = (
 				D27999FD27604953000B0318 /* LaunchScreen.storyboard in Resources */,
 				D27999FA27604953000B0318 /* Assets.xcassets in Resources */,
-				D27999F827604951000B0318 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,10 +367,12 @@
 			files = (
 				D2799A312761AF91000B0318 /* ListingGroupSelectionViewModel.swift in Sources */,
 				D27999F527604951000B0318 /* ViewController.swift in Sources */,
+				D2799A3A2761B80A000B0318 /* ListingCell.swift in Sources */,
+				D2799A342761B4A3000B0318 /* ListingGroupViewController.swift in Sources */,
 				D27999F127604951000B0318 /* AppDelegate.swift in Sources */,
+				D2799A372761B7DE000B0318 /* ListingGroupSelectionView.swift in Sources */,
 				D2799A2B2761AAAA000B0318 /* Listing.swift in Sources */,
 				D2799A292761AA95000B0318 /* ListingService.swift in Sources */,
-				D27999F327604951000B0318 /* SceneDelegate.swift in Sources */,
 				D2799A2F2761AAF6000B0318 /* ListingGroupViewModel.swift in Sources */,
 				D2799A2D2761AAC5000B0318 /* ListingViewModel.swift in Sources */,
 			);
@@ -378,8 +384,6 @@
 			files = (
 				D2799A2127604A02000B0318 /* ListingGroupViewModelTests.swift in Sources */,
 				D2799A2627608C83000B0318 /* ListingGroupStateSpy.swift in Sources */,
-				D2799A0827604953000B0318 /* TDD01Tests.swift in Sources */,
-				D2799A2427606569000B0318 /* ListingServiceStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,14 +398,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D27999F627604951000B0318 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D27999F727604951000B0318 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D27999FB27604953000B0318 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -542,7 +538,6 @@
 				INFOPLIST_FILE = TDD01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -571,7 +566,6 @@
 				INFOPLIST_FILE = TDD01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

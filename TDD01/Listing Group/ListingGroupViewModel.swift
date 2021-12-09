@@ -14,6 +14,17 @@ public enum ListingGroupType {
     case resident
 }
 
+extension ListingGroupType {
+    var title: String {
+        switch self {
+        case .commercial:
+            return "Commercial"
+        case .resident:
+            return "Resident"
+        }
+    }
+}
+
 public struct ListingGroupViewModel {
     let service: ListingService
     let groupSelection: ListingGroupSelectionViewModel
@@ -25,8 +36,8 @@ public struct ListingGroupViewModel {
     
     public enum State: Equatable {
         case disconnected
-        case listing([ListingViewModel])
         case loading(ListingGroupType)
+        case listing([ListingViewModel])
     }
     
     public var state: Observable<State> {
@@ -38,7 +49,7 @@ public struct ListingGroupViewModel {
         )
     }
     
-    private let connectRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    let connectRelay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let startLoadingRelay: PublishRelay<Void> = PublishRelay()
     private let clearRelay: PublishRelay<Void> = PublishRelay()
     
@@ -46,7 +57,7 @@ public struct ListingGroupViewModel {
     
     public func connect(groupType: ListingGroupType) {
         connectRelay.accept(true)
-        groupSelection.type.accept(groupType)
+        groupSelection.selectedType.accept(groupType)
     }
     
     public func disconnect() {
@@ -72,15 +83,17 @@ extension ListingGroupViewModel {
         startLoadingRelay
             .map { [groupSelection] _ in
                 print("[DEBUG] start loading")
-                return .loading(groupSelection.type.value)
+                return .loading(groupSelection.selectedType.value)
             }
     }
     
     private func displayListing(groupSelection: ListingGroupSelectionViewModel) -> Observable<State> {
-        groupSelection.type
-            .skip(while: { _ in connectRelay.value == false })
-            .do(onNext: { _ in startLoadingRelay.accept(()) })
-            .flatMapLatest { [service] type in
+        groupSelection.selectedType
+            .filter({ _ in
+                connectRelay.value == true
+            }).do(onNext: { _ in
+                startLoadingRelay.accept(())
+            }).flatMapLatest { type in
                 service.fetch(type: type)
             }.map { listings in
                 print("[DEBUG] displaying listings")

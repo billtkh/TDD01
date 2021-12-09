@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 
 public struct ListingGroupSelectionViewModel {
-    let type: BehaviorRelay<ListingGroupType> = BehaviorRelay(value: .commercial)
+    let selections: [ListingGroupType]
+    let selectedType: BehaviorRelay<ListingGroupType>
     
-    public init() { }
+    public init(selections: [ListingGroupType] = [.commercial, .resident]) {
+        self.selections = selections
+        self.selectedType = BehaviorRelay(value: selections.first!)
+    }
 }
