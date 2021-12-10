@@ -44,16 +44,15 @@ class ListingGroupViewController: ViewController {
         return view
     }()
     
+    private lazy var clearButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: nil)
+        barButtonItem.setCommonStyle()
+        return barButtonItem
+    }()
+    
     private lazy var connectionButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(title: "Connect", style: .plain, target: self, action: #selector(toggleConnect))
-        barButtonItem.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-        ], for: .normal)
-        barButtonItem.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-        ], for: .highlighted)
+        barButtonItem.setCommonStyle()
         return barButtonItem
     }()
     
@@ -76,8 +75,8 @@ class ListingGroupViewController: ViewController {
     override func setupUI() {
         super.setupUI()
         
+        navigationItem.leftBarButtonItem = clearButtonItem
         navigationItem.rightBarButtonItem = connectionButtonItem
-        
         navigationItem.titleView = groupSelectionView
         
         view.addSubview(tableView)
@@ -113,6 +112,10 @@ class ListingGroupViewController: ViewController {
                 self.loadingView.isHidden = true
             }
         }).disposed(by: disposeBag)
+        
+        clearButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.viewModel.clear()
+        }).disposed(by: disposeBag)
     }
     
     @objc
@@ -124,5 +127,18 @@ class ListingGroupViewController: ViewController {
             viewModel.connect(groupType: viewModel.groupSelection.selectedType.value)
             connectionButtonItem.title = "Disconnect"
         }
+    }
+}
+
+extension UIBarButtonItem {
+    func setCommonStyle() {
+        setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+        ], for: .normal)
+        setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+        ], for: .highlighted)
     }
 }

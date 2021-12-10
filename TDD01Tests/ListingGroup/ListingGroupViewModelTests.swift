@@ -21,7 +21,7 @@ class ListingGroupViewModelTests: XCTestCase {
         let sut = makeSUT()
         let stateSpy = ListingGroupStateSpy(sut.viewModel.state)
         sut.viewModel.connect(groupType: .resident)
-        let expectation = self.expectation(description: "loading")
+        let expectation = expectation(description: "loading")
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) { [expectation] in
             expectation.fulfill()
         }
@@ -37,7 +37,7 @@ class ListingGroupViewModelTests: XCTestCase {
         let sut = makeSUT()
         let stateSpy = ListingGroupStateSpy(sut.viewModel.state)
         sut.viewModel.connect(groupType: .commercial)
-        let expectation = self.expectation(description: "loading")
+        let expectation = expectation(description: "loading")
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) { [expectation] in
             expectation.fulfill()
         }
@@ -53,7 +53,7 @@ class ListingGroupViewModelTests: XCTestCase {
         let sut = makeSUT()
         let stateSpy = ListingGroupStateSpy(sut.viewModel.state)
         sut.viewModel.connect(groupType: .commercial)
-        let expectation = self.expectation(description: "loading")
+        let expectation = expectation(description: "loading")
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) { [expectation] in
             sut.viewModel.disconnect()
             expectation.fulfill()
@@ -71,7 +71,7 @@ class ListingGroupViewModelTests: XCTestCase {
         let sut = makeSUT()
         let stateSpy = ListingGroupStateSpy(sut.viewModel.state)
         sut.viewModel.connect(groupType: .commercial)
-        let expectation = self.expectation(description: "loading")
+        let expectation = expectation(description: "loading")
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) { [expectation] in
             sut.viewModel.clear()
             sut.viewModel.disconnect()
