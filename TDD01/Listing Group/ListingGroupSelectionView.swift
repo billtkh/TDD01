@@ -18,6 +18,8 @@ public class ListingGroupSelectionView: UIView {
     private(set) lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: viewModel.selections.map({ $0.title }))
         segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.backgroundColor = .lightGray
+        segmentedControl.selectedSegmentTintColor = .darkText
         return segmentedControl
     }()
     
@@ -43,11 +45,18 @@ public class ListingGroupSelectionView: UIView {
     
     func binding() {
         segmentedControl.rx.selectedSegmentIndex
-            .map({ [viewModel] index in
-                let type = viewModel.selections[index]
-                print("[DEBUG] segmentedControl did select \(type.title)")
+            .compactMap({ [weak self] index in
+                let type = self?.viewModel.selections[index]
+                print("[DEBUG] segmentedControl did select \(type?.title ?? "nil")")
                 return type
             }).bind(to: viewModel.selectedType)
+            .disposed(by: disposeBag)
+        
+        viewModel.selectedType
+            .asDriver()
+            .compactMap { [weak self] type in
+                return self?.viewModel.selections.firstIndex(of: type)
+            }.drive(segmentedControl.rx.selectedSegmentIndex)
             .disposed(by: disposeBag)
     }
 }

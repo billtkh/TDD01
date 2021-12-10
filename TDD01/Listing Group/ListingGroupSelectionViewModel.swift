@@ -17,4 +17,10 @@ public struct ListingGroupSelectionViewModel {
         self.selections = selections
         self.selectedType = BehaviorRelay(value: selections.first!)
     }
+    
+    func next() {
+        let index = selections.firstIndex(of: selectedType.value) ?? 0
+        let nextIndex = index + 1 < selections.count ? index + 1 : 0
+        selectedType.accept(selections[nextIndex])
+    }
 }

@@ -44,6 +44,12 @@ class ListingGroupViewController: ViewController {
         return view
     }()
     
+    private lazy var nextButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: nil, action: nil)
+        barButtonItem.setCommonStyle()
+        return barButtonItem
+    }()
+    
     private lazy var clearButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: nil)
         barButtonItem.setCommonStyle()
@@ -75,7 +81,7 @@ class ListingGroupViewController: ViewController {
     override func setupUI() {
         super.setupUI()
         
-        navigationItem.leftBarButtonItem = clearButtonItem
+        navigationItem.leftBarButtonItems = [nextButtonItem, clearButtonItem]
         navigationItem.rightBarButtonItem = connectionButtonItem
         navigationItem.titleView = groupSelectionView
         
@@ -99,7 +105,8 @@ class ListingGroupViewController: ViewController {
                 self.tableView.delegate = nil
                 self.tableView.dataSource = nil
                 Observable.of(listings)
-                    .bind(to: self.tableView.rx.items) { (tableView, row, element) in
+                    .asDriver(onErrorJustReturn: [])
+                    .drive(self.tableView.rx.items) { (tableView, row, element) in
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(ListingCell.self)) as? ListingCell else { return UITableViewCell() }
                         cell.updateUI(viewModel: element)
                         return cell
@@ -111,6 +118,10 @@ class ListingGroupViewController: ViewController {
             case .disconnected:
                 self.loadingView.isHidden = true
             }
+        }).disposed(by: disposeBag)
+        
+        nextButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.viewModel.groupSelection.next()
         }).disposed(by: disposeBag)
         
         clearButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
