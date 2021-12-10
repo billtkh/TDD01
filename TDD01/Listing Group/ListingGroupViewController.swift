@@ -51,7 +51,7 @@ class ListingGroupViewController: ViewController {
     }()
     
     private lazy var connectionButtonItem: UIBarButtonItem = {
-        let barButtonItem = UIBarButtonItem(title: "Connect", style: .plain, target: self, action: #selector(toggleConnect))
+        let barButtonItem = UIBarButtonItem(title: "Connect", style: .plain, target: nil, action: nil)
         barButtonItem.setCommonStyle()
         return barButtonItem
     }()
@@ -116,17 +116,17 @@ class ListingGroupViewController: ViewController {
         clearButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
             self?.viewModel.clear()
         }).disposed(by: disposeBag)
-    }
-    
-    @objc
-    func toggleConnect() {
-        if viewModel.connectRelay.value {
-            viewModel.disconnect()
-            connectionButtonItem.title = "Connect"
-        } else {
-            viewModel.connect(groupType: viewModel.groupSelection.selectedType.value)
-            connectionButtonItem.title = "Disconnect"
-        }
+        
+        connectionButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let buttonItem = self?.connectionButtonItem, let viewModel = self?.viewModel else { return }
+            if viewModel.connectRelay.value {
+                viewModel.disconnect()
+                buttonItem.title = "Connect"
+            } else {
+                viewModel.connect(groupType: viewModel.groupSelection.selectedType.value)
+                buttonItem.title = "Disconnect"
+            }
+        }).disposed(by: disposeBag)
     }
 }
 
