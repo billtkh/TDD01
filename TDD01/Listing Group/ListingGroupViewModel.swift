@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
 
 public enum ListingGroupType {
     case commercial
@@ -29,6 +30,18 @@ public struct ListingGroupViewModel {
     let service: ListingService
     let groupSelection: ListingGroupSelectionViewModel
     
+    public struct Input {
+        let clearTrigger: Driver<Void>
+        let isConnectingTrigger: Driver<Bool>
+        let nextTrigger: Driver<Void>
+    }
+    
+    public struct Output {
+        let groupSelection: Driver<ListingGroupType>
+        let state: Driver<State>
+        let isConnected: Driver<Bool>
+    }
+    
     public init(service: ListingService, groupSelection: ListingGroupSelectionViewModel) {
         self.service = service
         self.groupSelection = groupSelection
@@ -40,7 +53,7 @@ public struct ListingGroupViewModel {
         case listing([ListingViewModel])
     }
     
-    public var state: Observable<State> {
+    private var state: Observable<State> {
         return Observable.merge(
             isDisconnected(),
             awaitingResponse(),
@@ -54,6 +67,32 @@ public struct ListingGroupViewModel {
     private let clearRelay: PublishRelay<Void> = PublishRelay()
     
     private let disposeBag = DisposeBag()
+    
+    public func transform(input: Input) -> Output {
+        input.clearTrigger.drive(onNext: { _ in
+            clear()
+        }).disposed(by: disposeBag)
+
+        input.isConnectingTrigger.drive(onNext: { isConnecting in
+            if isConnecting {
+                connect(groupType: groupSelection.selectedType.value)
+            } else {
+                disconnect()
+            }
+            
+        }).disposed(by: disposeBag)
+        
+        input.nextTrigger.drive(onNext: { _ in
+            groupSelection.next()
+        }).disposed(by: disposeBag)
+        
+        let output = Output(
+            groupSelection: groupSelection.selectedType.asDriver(),
+            state: state.asDriver(onErrorJustReturn: .disconnected),
+            isConnected: connectRelay.asDriver()
+        )
+        return output
+    }
     
     public func connect(groupType: ListingGroupType) {
         connectRelay.accept(true)

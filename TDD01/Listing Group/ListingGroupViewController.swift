@@ -97,7 +97,17 @@ class ListingGroupViewController: ViewController {
     }
     
     func binding() {
-        viewModel.state.subscribe(onNext: { [weak self] state in
+        let input = ListingGroupViewModel.Input(
+            clearTrigger: clearButtonItem.rx.tap.asDriver(),
+            isConnectingTrigger: connectionButtonItem.rx.tap.map({ [weak self] _ in
+                return self?.connectionButtonItem.title == "Connect"
+            }).asDriver(onErrorJustReturn: false),
+            nextTrigger: nextButtonItem.rx.tap.asDriver()
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.state.drive(onNext: { [weak self] state in
             guard let self = self else { return }
             switch state {
             case .listing(let listings):
@@ -119,23 +129,12 @@ class ListingGroupViewController: ViewController {
                 self.loadingView.isHidden = true
             }
         }).disposed(by: disposeBag)
-        
-        nextButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.viewModel.groupSelection.next()
-        }).disposed(by: disposeBag)
-        
-        clearButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.viewModel.clear()
-        }).disposed(by: disposeBag)
-        
-        connectionButtonItem.rx.tap.subscribe(onNext: { [weak self] _ in
-            guard let buttonItem = self?.connectionButtonItem, let viewModel = self?.viewModel else { return }
-            if viewModel.connectRelay.value {
-                viewModel.disconnect()
-                buttonItem.title = "Connect"
+
+        output.isConnected.drive(onNext: { [weak self] isConnected in
+            if isConnected {
+                self?.connectionButtonItem.title = "Disconnect"
             } else {
-                viewModel.connect(groupType: viewModel.groupSelection.selectedType.value)
-                buttonItem.title = "Disconnect"
+                self?.connectionButtonItem.title = "Connect"
             }
         }).disposed(by: disposeBag)
     }
