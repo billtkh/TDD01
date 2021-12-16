@@ -9,6 +9,9 @@ target 'TDD01' do
   pod 'RxSwift', '6.2.0'
   pod 'RxCocoa', '6.2.0'
   pod 'SnapKit', '~> 5.0.0'
+  
+  pod 'ReactiveObjC'
+  pod 'Masonry'
 
   target 'TDD01Tests' do
     inherit! :search_paths
@@ -17,4 +20,13 @@ target 'TDD01' do
     pod 'RxCocoa', '6.2.0'
   end
 
+end
+
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        end
+    end
 end

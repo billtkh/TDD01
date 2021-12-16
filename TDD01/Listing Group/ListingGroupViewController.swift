@@ -137,6 +137,13 @@ class ListingGroupViewController: ViewController {
                 self?.connectionButtonItem.title = "Connect"
             }
         }).disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(ListingViewModel.self).subscribe(onNext: { [weak self] viewModel in
+            let serviceStub = ListingDetailServiceStub()
+            let viewModel = ListingDetailViewModel(listingDetailService: serviceStub, listingTitle: viewModel.listing.title)
+            let detailViewController = ListingDetailViewController(viewModel: viewModel)
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+        }).disposed(by: disposeBag)
     }
 }
 

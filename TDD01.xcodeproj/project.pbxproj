@@ -23,6 +23,10 @@
 		D2799A342761B4A3000B0318 /* ListingGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A332761B4A3000B0318 /* ListingGroupViewController.swift */; };
 		D2799A372761B7DE000B0318 /* ListingGroupSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A362761B7DE000B0318 /* ListingGroupSelectionView.swift */; };
 		D2799A3A2761B80A000B0318 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2799A392761B80A000B0318 /* ListingCell.swift */; };
+		D2CA7D11276AD8C900794E84 /* ListingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7D10276AD8C900794E84 /* ListingDetailViewController.m */; };
+		D2CA7D14276ADAD200794E84 /* ListingDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7D13276ADAD200794E84 /* ListingDetailViewModel.m */; };
+		D2CA7D17276ADAEB00794E84 /* ListingDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7D16276ADAEB00794E84 /* ListingDetail.m */; };
+		D2CA7D91276B192A00794E84 /* ListingDetailServiceStub.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA7D90276B192A00794E84 /* ListingDetailServiceStub.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +41,11 @@
 
 /* Begin PBXFileReference section */
 		47E7987ED9F193477FED47D4 /* Pods-TDD01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01.debug.xcconfig"; path = "Target Support Files/Pods-TDD01/Pods-TDD01.debug.xcconfig"; sourceTree = "<group>"; };
-		4AD8B81B0F915E8A8864F106 /* Pods-TDD01-TDD01UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01-TDD01UITests.debug.xcconfig"; path = "Target Support Files/Pods-TDD01-TDD01UITests/Pods-TDD01-TDD01UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		52964489C7DB38C2EFD69BAD /* Pods-TDD01Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01Tests.debug.xcconfig"; path = "Target Support Files/Pods-TDD01Tests/Pods-TDD01Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		584D2317C6D1EA7E2A7DFE3D /* Pods-TDD01Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01Tests.release.xcconfig"; path = "Target Support Files/Pods-TDD01Tests/Pods-TDD01Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B42B832C758844C3EF0DCC8A /* Pods_TDD01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDD01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB5AFBFA300912822ED6A08 /* Pods_TDD01Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDD01Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE8592AB9E1CFDD8B3E5EBAC /* Pods_TDD01_TDD01UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDD01_TDD01UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB64AF90A9F4E1FB6B1BCB9A /* Pods-TDD01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01.release.xcconfig"; path = "Target Support Files/Pods-TDD01/Pods-TDD01.release.xcconfig"; sourceTree = "<group>"; };
-		D1801698F346CEB73C88D609 /* Pods-TDD01-TDD01UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDD01-TDD01UITests.release.xcconfig"; path = "Target Support Files/Pods-TDD01-TDD01UITests/Pods-TDD01-TDD01UITests.release.xcconfig"; sourceTree = "<group>"; };
 		D27999ED27604951000B0318 /* TDD01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDD01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27999F027604951000B0318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D27999F427604951000B0318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +63,19 @@
 		D2799A332761B4A3000B0318 /* ListingGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupViewController.swift; sourceTree = "<group>"; };
 		D2799A362761B7DE000B0318 /* ListingGroupSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingGroupSelectionView.swift; sourceTree = "<group>"; };
 		D2799A392761B80A000B0318 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
+		D2CA7D0E276AD8C800794E84 /* TDD01-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDD01-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2CA7D0F276AD8C900794E84 /* ListingDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListingDetailViewController.h; sourceTree = "<group>"; };
+		D2CA7D10276AD8C900794E84 /* ListingDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListingDetailViewController.m; sourceTree = "<group>"; };
+		D2CA7D12276ADAD200794E84 /* ListingDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListingDetailViewModel.h; sourceTree = "<group>"; };
+		D2CA7D13276ADAD200794E84 /* ListingDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListingDetailViewModel.m; sourceTree = "<group>"; };
+		D2CA7D15276ADAEB00794E84 /* ListingDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListingDetail.h; sourceTree = "<group>"; };
+		D2CA7D16276ADAEB00794E84 /* ListingDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListingDetail.m; sourceTree = "<group>"; };
+		D2CA7D74276AE01A00794E84 /* TDD01-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDD01-Prefix.pch"; sourceTree = "<group>"; };
+		D2CA7D87276AF52000794E84 /* ReactiveObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2CA7D8B276AF53F00794E84 /* ReactiveObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReactiveObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2CA7D8F276B192A00794E84 /* ListingDetailServiceStub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListingDetailServiceStub.h; sourceTree = "<group>"; };
+		D2CA7D90276B192A00794E84 /* ListingDetailServiceStub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListingDetailServiceStub.m; sourceTree = "<group>"; };
+		D2CA7D93276B2D6A00794E84 /* ListingDetailService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListingDetailService.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +101,9 @@
 		980592236B869B9B3BF898ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2CA7D8B276AF53F00794E84 /* ReactiveObjC.framework */,
+				D2CA7D87276AF52000794E84 /* ReactiveObjC.framework */,
 				B42B832C758844C3EF0DCC8A /* Pods_TDD01.framework */,
-				BE8592AB9E1CFDD8B3E5EBAC /* Pods_TDD01_TDD01UITests.framework */,
 				BCB5AFBFA300912822ED6A08 /* Pods_TDD01Tests.framework */,
 			);
 			name = Frameworks;
@@ -120,7 +135,7 @@
 				D27999F027604951000B0318 /* AppDelegate.swift */,
 				D27999F427604951000B0318 /* ViewController.swift */,
 				D2799A272761AA7B000B0318 /* Listing Group */,
-				D2799A352761B5D7000B0318 /* Support Resources */,
+				D2799A352761B5D7000B0318 /* Supporting Files */,
 				D27999FE27604953000B0318 /* Info.plist */,
 			);
 			path = TDD01;
@@ -146,6 +161,7 @@
 		D2799A272761AA7B000B0318 /* Listing Group */ = {
 			isa = PBXGroup;
 			children = (
+				D2CA7D0D276AD50900794E84 /* Listing Detail */,
 				D2799A332761B4A3000B0318 /* ListingGroupViewController.swift */,
 				D2799A2E2761AAF6000B0318 /* ListingGroupViewModel.swift */,
 				D2799A362761B7DE000B0318 /* ListingGroupSelectionView.swift */,
@@ -158,13 +174,39 @@
 			path = "Listing Group";
 			sourceTree = "<group>";
 		};
-		D2799A352761B5D7000B0318 /* Support Resources */ = {
+		D2799A352761B5D7000B0318 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D2CA7D74276AE01A00794E84 /* TDD01-Prefix.pch */,
+				D2CA7D0E276AD8C800794E84 /* TDD01-Bridging-Header.h */,
 				D27999F927604953000B0318 /* Assets.xcassets */,
 				D27999FB27604953000B0318 /* LaunchScreen.storyboard */,
 			);
-			path = "Support Resources";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2CA7D0D276AD50900794E84 /* Listing Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D2CA7D0F276AD8C900794E84 /* ListingDetailViewController.h */,
+				D2CA7D10276AD8C900794E84 /* ListingDetailViewController.m */,
+				D2CA7D12276ADAD200794E84 /* ListingDetailViewModel.h */,
+				D2CA7D13276ADAD200794E84 /* ListingDetailViewModel.m */,
+				D2CA7D15276ADAEB00794E84 /* ListingDetail.h */,
+				D2CA7D16276ADAEB00794E84 /* ListingDetail.m */,
+				D2CA7D92276B2D5800794E84 /* Service */,
+			);
+			path = "Listing Detail";
+			sourceTree = "<group>";
+		};
+		D2CA7D92276B2D5800794E84 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D2CA7D93276B2D6A00794E84 /* ListingDetailService.h */,
+				D2CA7D8F276B192A00794E84 /* ListingDetailServiceStub.h */,
+				D2CA7D90276B192A00794E84 /* ListingDetailServiceStub.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		EF7040D7F86645800BA2D1DF /* Pods */ = {
@@ -172,8 +214,6 @@
 			children = (
 				47E7987ED9F193477FED47D4 /* Pods-TDD01.debug.xcconfig */,
 				CB64AF90A9F4E1FB6B1BCB9A /* Pods-TDD01.release.xcconfig */,
-				4AD8B81B0F915E8A8864F106 /* Pods-TDD01-TDD01UITests.debug.xcconfig */,
-				D1801698F346CEB73C88D609 /* Pods-TDD01-TDD01UITests.release.xcconfig */,
 				52964489C7DB38C2EFD69BAD /* Pods-TDD01Tests.debug.xcconfig */,
 				584D2317C6D1EA7E2A7DFE3D /* Pods-TDD01Tests.release.xcconfig */,
 			);
@@ -234,6 +274,7 @@
 				TargetAttributes = {
 					D27999EC27604951000B0318 = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1310;
 					};
 					D2799A0227604953000B0318 = {
 						CreatedOnToolsVersion = 13.0;
@@ -366,14 +407,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2799A312761AF91000B0318 /* ListingGroupSelectionViewModel.swift in Sources */,
+				D2CA7D11276AD8C900794E84 /* ListingDetailViewController.m in Sources */,
 				D27999F527604951000B0318 /* ViewController.swift in Sources */,
 				D2799A3A2761B80A000B0318 /* ListingCell.swift in Sources */,
 				D2799A342761B4A3000B0318 /* ListingGroupViewController.swift in Sources */,
+				D2CA7D91276B192A00794E84 /* ListingDetailServiceStub.m in Sources */,
 				D27999F127604951000B0318 /* AppDelegate.swift in Sources */,
 				D2799A372761B7DE000B0318 /* ListingGroupSelectionView.swift in Sources */,
 				D2799A2B2761AAAA000B0318 /* Listing.swift in Sources */,
+				D2CA7D14276ADAD200794E84 /* ListingDetailViewModel.m in Sources */,
 				D2799A292761AA95000B0318 /* ListingService.swift in Sources */,
 				D2799A2F2761AAF6000B0318 /* ListingGroupViewModel.swift in Sources */,
+				D2CA7D17276ADAEB00794E84 /* ListingDetail.m in Sources */,
 				D2799A2D2761AAC5000B0318 /* ListingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,10 +576,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9NQ9QG3G75;
+				GCC_PREFIX_HEADER = "TDD01/Supporting Files/TDD01-Prefix.pch";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveSwift/ReactiveSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+				);
 				INFOPLIST_FILE = TDD01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -545,11 +602,32 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxRelay\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.TDD01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TDD01/Supporting Files/TDD01-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -559,10 +637,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9NQ9QG3G75;
+				GCC_PREFIX_HEADER = "TDD01/Supporting Files/TDD01-Prefix.pch";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC/ReactiveObjC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReactiveSwift/ReactiveSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxCocoa/RxCocoa.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxRelay/RxRelay.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift/RxSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+				);
 				INFOPLIST_FILE = TDD01/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -573,11 +663,30 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Masonry\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxRelay\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.TDD01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TDD01/Supporting Files/TDD01-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
