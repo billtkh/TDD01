@@ -54,7 +54,7 @@
     RAC(self, contentLabel.text) = RACObserve(self.viewModel, content);
 }
 
-#pragma mark - lazy init view
+#pragma mark - lazy properties
 
 - (UIStackView *)vStack {
     if (_vStack == nil) {

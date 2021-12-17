@@ -16,6 +16,7 @@
                                                              content:[NSString stringWithFormat:@"%@%@", @"This is the content of ", title]
                                                             iconName:[NSString stringWithFormat:@"contact_detail_ic_email"]];
         [subscriber sendNext:detail];
+        [subscriber sendCompleted];
         return nil;
     }] delay:1];
 }
