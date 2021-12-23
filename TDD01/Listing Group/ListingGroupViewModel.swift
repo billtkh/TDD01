@@ -53,7 +53,7 @@ public struct ListingGroupViewModel {
         case listing([ListingViewModel])
     }
     
-    private var state: Observable<State> {
+    public var state: Observable<State> {
         return Observable.merge(
             isDisconnected(),
             awaitingResponse(),
